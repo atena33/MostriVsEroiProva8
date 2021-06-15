@@ -12,20 +12,16 @@ namespace MostriVsEroi.Services
     {
         public static Mostro GetMostroRandom(Eroe eroe)
         {
-            
-            var mostri = MostroMockRepository.FetchMostri();
-            var random = new Random();
-            int index = random.Next(mostri.Count);
-            var mostro = mostri[index];
-            if (mostro.Livello.NumeroLivello <= eroe.Livello.NumeroLivello)
+            var mostro = new Mostro();
+            do
             {
-                return mostro;
-            }
-            else
-            {
-                Console.WriteLine("Non esiste un mostro del tuo livello: crealo!");
-            }
-            return new Mostro();
+                var mostri = MostroMockRepository.FetchMostri();
+                var random = new Random();
+                int index = random.Next(mostri.Count);
+                mostro = mostri[index];
+            } while (mostro.Livello.NumeroLivello <= eroe.Livello.NumeroLivello);
+
+            return mostro;
         }
     }
 }

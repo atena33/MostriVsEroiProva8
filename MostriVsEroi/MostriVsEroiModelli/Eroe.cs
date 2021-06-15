@@ -8,12 +8,12 @@ namespace MostriVsEroi.Modelli
 {
     public class Eroe
     {
-        int count = 0;
+        public static int count = 1;
         public int IdEroe { get; set; }
         public string NomeEroe { get; set; }
         public CategoriaEroe CategoriaEroe { get; set; }
         public Arma Arma { get; set; }
-        public  Livello Livello { get; set; }
+        public Livello Livello { get; set; } = new Livello(1);
         public int PuntiAccumulati { get; set; }
 
 
@@ -23,13 +23,13 @@ namespace MostriVsEroi.Modelli
             NomeEroe = nomeEroe;
             CategoriaEroe = categoriaEroe;
             Arma = arma;
-            Livello = getLivello(PuntiAccumulati);
+           
         }
 
-        public int EroeAttacca()
+        public int EroeAttacca(Eroe eroe)
         {
             
-            var armaPuntiDanno = Arma.PuntiDanno;
+            var armaPuntiDanno = eroe.Arma.PuntiDanno;
             return armaPuntiDanno;
         }
 

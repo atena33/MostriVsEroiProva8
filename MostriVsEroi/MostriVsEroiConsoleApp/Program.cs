@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MostriVsEroi;
+using MostriVsEroi.Views;
+using System;
 
 namespace MostriVsEroiConsoleApp
 {
@@ -6,7 +8,7 @@ namespace MostriVsEroiConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Class1.AvviaProgramma();
         }
     }
 }

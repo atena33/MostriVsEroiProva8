@@ -12,9 +12,9 @@ namespace MostriVsEroi.View
     {
         internal static void Gioca(Utente utente)
         {
-            SceltaEroe(utente);
-            SceltaMostro(SceltaEroe(utente));
-            Partita(SceltaEroe(utente), SceltaMostro(SceltaEroe(utente)));
+            var eroe = SceltaEroe(utente);
+            var mostro = SceltaMostro(eroe);
+            Partita(eroe, mostro);
             bool haVinto = Partita(SceltaEroe(utente), SceltaMostro(SceltaEroe(utente)));
             CalcoloPunteggioELivello(haVinto, utente );
             GiocareAncora(utente);
@@ -41,7 +41,7 @@ namespace MostriVsEroi.View
             Eroe eroe = SceltaEroe(utente);
             Mostro mostro = SceltaMostro(eroe);
             int punti =eroe.PuntiAccumulati;
-            var livello = eroe.Livello.NumeroLivello;
+            int livello = eroe.Livello.NumeroLivello;
             if (haVinto)
             {
                  punti += EroeServices.CalcoloPunti(mostro);
@@ -60,18 +60,22 @@ namespace MostriVsEroi.View
         private static bool Partita(Eroe eroe, Mostro mostro)
         {
             bool haVinto = false;
-            var mostroPuntiVita = mostro.Livello.PuntiVita;
-            var eroePuntiVita = eroe.Livello.PuntiVita;
+            int mostroPuntiVita = mostro.Livello.PuntiVita;
+            int eroePuntiVita = eroe.Livello.PuntiVita;
             do
             {
-                eroe.EroeAttacca();
+                eroe.EroeAttacca(eroe);
                 
                 mostroPuntiVita -= eroe.Arma.PuntiDanno;
+                Console.WriteLine($"Hai attaccato:il mostro ha ancora {mostroPuntiVita} punti vita ");
                 mostro.MostroAttacca();
                 eroePuntiVita -= mostro.Arma.PuntiDanno;
+                Console.WriteLine($"Il mostro ha attaccato: hai ancora {eroePuntiVita} punti vita ");
+
             } while (mostroPuntiVita <=0 || eroePuntiVita <= 0 );
             if (mostroPuntiVita <= 0)
             {
+                Console.WriteLine("Hai vinto!");
                 return haVinto = true;
             }
             return haVinto;
@@ -86,17 +90,20 @@ namespace MostriVsEroi.View
 
         private static Eroe SceltaEroe(Utente utente)
         {
-            Console.WriteLine("Scegli il tuo eroe inserendo il suo nome");
-
+            Console.WriteLine("Scegli il tuo eroe inserendo il suo id");
+            int idEroe = 0;
+            Eroe eroeScelto = new Eroe();
             List<Eroe> eroi = EroeServices.GetEroi(utente);
             foreach (var eroe in eroi)
             {
                 Console.WriteLine($"Id : {eroe.IdEroe} - Nome: {eroe.NomeEroe} - Categoria: {eroe.CategoriaEroe} - Arma: {eroe.Arma.Nome}- Punti danno dell'arma: {eroe.Arma.PuntiDanno} ");
-                int scelta = int.Parse(Console.ReadLine());
-                if (scelta == eroe.IdEroe)
-                {
-                    return eroe;
-                }
+                idEroe = eroe.IdEroe;
+                eroeScelto = eroe;
+            }
+            int scelta = int.Parse(Console.ReadLine());
+            if (scelta == idEroe )
+            {
+                return eroeScelto;
             }
             if (eroi.Count == 0)
             {

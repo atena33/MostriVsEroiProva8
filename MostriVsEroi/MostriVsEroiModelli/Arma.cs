@@ -10,6 +10,10 @@
             Nome = nome;
             PuntiDanno = puntiDanno;
         }
+        public Arma()
+        {
+
+        }
 
         
     }

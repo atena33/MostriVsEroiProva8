@@ -1,8 +1,15 @@
-﻿using System;
+﻿using MostriVsEroi.Views;
+using System;
 
 namespace MostriVsEroi
 {
-    public class Class1
+    public static class Class1
     {
+
+         public static void AvviaProgramma()
+        {
+            Menu.MainMenu();
+
+        }
     }
 }

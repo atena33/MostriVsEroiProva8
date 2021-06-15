@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MostriVsEroi.Modelli
 {
@@ -8,6 +9,7 @@ namespace MostriVsEroi.Modelli
         public string Password { get; set; }
         public bool IsAuthenticated { get; set; }
         public bool IsAdmin { get; set; }
+        public List<Eroe> Eroi { get; set; }
 
         public Utente()
         {

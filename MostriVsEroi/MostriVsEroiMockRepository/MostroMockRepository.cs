@@ -12,8 +12,8 @@ namespace MostriVsEroi.MockRepository
         public static List<Mostro> FetchMostri()
         {
             List<Mostro> mostri = new List<Mostro>();
-            mostri.Add(new Mostro("Hulk", "Orco", new Arma("Arco", 7), 1));
-            mostri.Add(new Mostro("Lucifero", "Signore del male", new Arma("Divinazione", 15), 2));
+            mostri.Add(new Mostro("Hulk", "Orco", new Arma("Arco", 7), new Livello(1)));
+            mostri.Add(new Mostro("Lucifero", "Signore del male", new Arma("Divinazione", 15), new Livello(2)));
 
             return mostri;
 

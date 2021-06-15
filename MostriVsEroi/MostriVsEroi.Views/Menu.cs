@@ -25,11 +25,11 @@ namespace MostriVsEroi.Views
                 switch (scelta)
                 {
                     case "1":
-                        //Devo fare accedere l'utente
                         AccediView.Accedi();
                         break;
                     case "2":
                         //Devo far registrare l'utente
+                        RegistratiView.RegistraUtente();
                         break;
                     case "0":
                         Console.WriteLine("Ciao alla prossima");
@@ -61,7 +61,7 @@ namespace MostriVsEroi.Views
                 switch (scelta)
                 {
                     case "1":
-                        //Devo fare giocare l'utente
+                        
                         GiocaView.Gioca(utente);
                         break;
                     case "2":
@@ -69,6 +69,7 @@ namespace MostriVsEroi.Views
                         break;
                     case "3":
                         //Devo far eliminare l'eroe
+                        EliminaEroeView.EliminaEroe(utente);
                         break;
                     case "0":
                         MainMenu();
