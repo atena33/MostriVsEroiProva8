@@ -68,7 +68,7 @@ namespace MostriVsEroi.Views
                         CreaNuovoEroe.CreaEroe(utente);
                         break;
                     case "3":
-                        //Devo far eliminare l'eroe
+                        
                         EliminaEroeView.EliminaEroe(utente);
                         break;
                     case "0":

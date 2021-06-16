@@ -28,9 +28,8 @@ namespace MostriVsEroi.Modelli
 
         public int EroeAttacca(Eroe eroe)
         {
-            
-            var armaPuntiDanno = eroe.Arma.PuntiDanno;
-            return armaPuntiDanno;
+
+            return eroe.Arma.PuntiDanno;
         }
 
         public Livello getLivello(int puntiAccumulati)

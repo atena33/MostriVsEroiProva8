@@ -19,7 +19,7 @@ namespace MostriVsEroi.Services
                 var random = new Random();
                 int index = random.Next(mostri.Count);
                 mostro = mostri[index];
-            } while (mostro.Livello.NumeroLivello <= eroe.Livello.NumeroLivello);
+            } while (mostro.Livello.NumeroLivello > eroe.Livello.NumeroLivello);
 
             return mostro;
         }

@@ -22,7 +22,7 @@ namespace MostriVsEroi.Modelli
 
         }
 
-        private int GetPuntiVita(int numeroLivello)
+        public int GetPuntiVita(int numeroLivello)
         {
             int puntiVita = 0;
             switch (numeroLivello)

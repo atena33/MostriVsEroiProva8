@@ -18,15 +18,13 @@ namespace MostriVsEroi.Views
             foreach (var eroe in eroi)
             {
                 Console.WriteLine($"Id: {eroe.IdEroe} - Nome: {eroe.NomeEroe} - Categoria: {eroe.CategoriaEroe}");
-                var id = int.Parse(Console.ReadLine());
-
-                if (eroe.IdEroe == id)
-                {
-                    eroi.Remove(eroe);
-                    Console.WriteLine($"L'eroe {eroe.NomeEroe} è stato eliminato");
-                    return eroi;
-                } 
+                
             }
+
+            int scelta = int.Parse(Console.ReadLine());
+            Eroe result = eroi.Find(IdEroe => IdEroe.IdEroe == scelta);
+            eroi.Remove(result);
+            Console.WriteLine($"L'eroe {result.NomeEroe} è stato eliminato");
             return eroi;
         }
     }

@@ -30,19 +30,21 @@ namespace MostriVsEroi.Views
 
             }
 
+            var armi = ArmaMockRepository.GetArmi(categoria);
             Console.WriteLine("Scegli l'arma tra quelle disponibili inserendo il nome");
-            Console.WriteLine($"{ArmaMockRepository.GetArmi(categoria)}");
-            var nomeArma = Console.ReadLine();
-            foreach (var item in ArmaMockRepository.GetArmi(categoria))
+            
+            foreach (var item in armi)
             {
-                if (item.Nome == nomeArma)
-                {
-                    puntiDanno = item.PuntiDanno;
+                Console.WriteLine($"{item.Nome}");
 
-                }
+                
             }
-            Eroe newEroe = new Eroe(nome, categoria, new Arma(nomeArma, puntiDanno));
+            var scelta = Console.ReadLine();
+            Arma result = armi.Find(NomeArma => NomeArma.Nome == scelta);
+
+            Eroe newEroe = new Eroe(nome, categoria, new Arma(result.Nome, result.PuntiDanno));
             EroeMockRepository.FetchEroi(utente).Add(newEroe);
+           
             Console.WriteLine("Eroe inserito");
             Menu.MenuNonAdmin(utente);
             return newEroe;
