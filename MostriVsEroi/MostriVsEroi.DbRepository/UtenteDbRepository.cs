@@ -34,11 +34,12 @@ namespace MostriVsEroi.DbRepository
                 Utente u = new Utente();
                 while (reader.Read())
                 {
+                    int idUtente = (int)reader["IdUtente"];
                     string username1 = (string)reader["Username"];
                     string password1 = (string)reader["Password"];
                     
 
-                     u = new Utente(username1, password1, true);
+                     u = new Utente(idUtente, username1, password1, true);
                     
                 }
                 connection.Close();

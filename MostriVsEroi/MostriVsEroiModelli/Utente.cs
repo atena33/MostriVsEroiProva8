@@ -18,13 +18,15 @@ namespace MostriVsEroi.Modelli
         }
         public Utente(string username, string password)
         {
+            
             Username = username;
             Password = password;
             IsAuthenticated = false;
             IsAdmin = false;
         }
-        public Utente(string username, string password, bool isAuthenticated)
+        public Utente(int idUtente, string username, string password, bool isAuthenticated)
         {
+            IdUtente = idUtente;
             Username = username;
             Password = password;
             IsAuthenticated = isAuthenticated;

@@ -11,13 +11,13 @@ namespace MostriVsEroi.Modelli
         public static int count = 1;
         public int IdEroe { get; set; }
         public string NomeEroe { get; set; }
-        public CategoriaEroe CategoriaEroe { get; set; }
+        public string CategoriaEroe { get; set; }
         public Arma Arma { get; set; }
         public Livello Livello { get; set; } = new Livello(1);
         public int PuntiAccumulati { get; set; }
 
 
-        public Eroe(string nomeEroe, CategoriaEroe categoriaEroe, Arma arma)
+        public Eroe(string nomeEroe, string categoriaEroe, Arma arma)
         {
             IdEroe = count ++;
             NomeEroe = nomeEroe;
@@ -26,7 +26,7 @@ namespace MostriVsEroi.Modelli
            
         }
 
-        public Eroe(int idEroe, string nomeEroe, CategoriaEroe categoriaEroe, Arma arma)
+        public Eroe(int idEroe, string nomeEroe, string categoriaEroe, Arma arma)
         {
             IdEroe = idEroe;
             NomeEroe = nomeEroe;

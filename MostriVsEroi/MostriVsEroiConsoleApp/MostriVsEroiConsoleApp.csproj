@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MostriVsEroi.Views\MostriVsEroi.Views.csproj" />
-    <ProjectReference Include="..\MostriVsEroi\MostriVsEroi.csproj" />
   </ItemGroup>
 
 </Project>

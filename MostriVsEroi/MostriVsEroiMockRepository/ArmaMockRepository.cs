@@ -9,7 +9,7 @@ namespace MostriVsEroi.MockRepository
 {
     public static class ArmaMockRepository
     {
-        public static List <Arma> GetArmi(CategoriaEroe categoriaEroe)
+        public static List <Arma> GetArmi(string categoriaEroe)
         {
             Arma a1 = new Arma("Alabarda", 15);
             Arma a2 = new Arma("Ascia", 8);
@@ -25,7 +25,7 @@ namespace MostriVsEroi.MockRepository
 
 
             List<Arma> armi = new List<Arma>();
-            if (categoriaEroe == CategoriaEroe.Guerriero)
+            if (categoriaEroe == "Guerriero")
             {
                 armi.Add(a1);
                 armi.Add(a2);
@@ -35,7 +35,7 @@ namespace MostriVsEroi.MockRepository
 
                 return armi;
             }
-            if (categoriaEroe == CategoriaEroe.Mago)
+            if (categoriaEroe == "Mago")
             {
                 armi.Add(a6);
                 armi.Add(a7);

@@ -22,7 +22,7 @@ namespace MostriVsEroi.DbRepository
                 SqlCommand command = new SqlCommand();
                 command.Connection = connection;
                 command.CommandType = System.Data.CommandType.Text;
-                command.CommandText = "SELECT dbo.Eroe.IdUtente, dbo.Eroe.IdArma, dbo.Arma.Nome, dbo.Arma.PuntiDanno, dbo.Eroe.NomeEroe, dbo.Eroe.CategoriaEroe, dbo.Eroe.PuntiAccumulati FROM  dbo.Utente INNER JOIN dbo.Eroe ON dbo.Utente.IdUtente = dbo.Eroe.IdUtente INNER JOIN dbo.Arma ON dbo.Eroe.IdArma = dbo.Arma.IdArma WHERE Utente.IdUtente = @IdUtente";
+                command.CommandText = "SELECT dbo.Eroe.IdUtente, dbo.Eroe.IdArma, dbo.Arma.Nome, dbo.Arma.PuntiDanno, dbo.Eroe.NomeEroe, dbo.Eroe.CategoriaEroe, dbo.Eroe.PuntiAccumulati, dbo.Eroe.IdEroe FROM  dbo.Utente INNER JOIN dbo.Eroe ON dbo.Utente.IdUtente = dbo.Eroe.IdUtente INNER JOIN dbo.Arma ON dbo.Eroe.IdArma = dbo.Arma.IdArma WHERE Utente.IdUtente = @IdUtente";
                 //command.CommandText = "FROM  dbo.Utente INNER JOIN dbo.Eroe ON dbo.Utente.IdUtente = dbo.Eroe.IdUtente";
                 ////command.CommandText = "INNER JOIN dbo.Eroe ON dbo.Utente.IdUtente = dbo.Eroe.IdUtente";
                 //command.CommandText = "INNER JOIN dbo.Arma ON dbo.Eroe.IdArma = dbo.Arma.IdArma WHERE Utente.IdUtente = @IdUtente";
@@ -42,8 +42,8 @@ namespace MostriVsEroi.DbRepository
                 {
                     int idEroe = (int)reader["IdEroe"];
                     string nomeEroe = (string)reader["NomeEroe"];
-                    CategoriaEroe categoriaEroe =(CategoriaEroe) reader["CategoriaEroe"];
-                    string nomeArma = (string)reader["NomeArma"];
+                    string categoriaEroe =(string) reader["CategoriaEroe"];
+                    string nomeArma = (string)reader["Nome"];
                     int puntiDanno = (int)reader["PuntiDanno"];
 
                     Eroe e = new Eroe(idEroe, nomeEroe, categoriaEroe, new Arma(nomeArma, puntiDanno) );

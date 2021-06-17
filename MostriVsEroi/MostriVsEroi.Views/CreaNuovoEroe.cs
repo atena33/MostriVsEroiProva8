@@ -14,19 +14,18 @@ namespace MostriVsEroi.Views
 
         internal static Eroe CreaEroe(Utente utente)
         {
-            CategoriaEroe categoria = CategoriaEroe.Guerriero;
-            var puntiDanno = 0;
+            string categoria = "";
             Console.WriteLine("Inserisci il nome dell'eroe");
             var nome = Console.ReadLine();
             Console.WriteLine($"Inserisci la categoria dell'eroe fra Guerriero(1) o Mago (2)");
             var cat = int.Parse(Console.ReadLine());
             if (cat == 1)
             {
-                categoria = CategoriaEroe.Guerriero;
+                categoria = "Guerriero";
             }
             else if (cat == 2)
             {
-                categoria = CategoriaEroe.Mago;
+                categoria = "Mago";
 
             }
 

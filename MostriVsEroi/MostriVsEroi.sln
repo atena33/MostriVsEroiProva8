@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroi", "MostriVsEroi\MostriVsEroi.csproj", "{0CE8A0E6-E81C-4B38-82FB-497278A0E478}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroiConsoleApp", "MostriVsEroiConsoleApp\MostriVsEroiConsoleApp.csproj", "{17BA761A-E0C3-4DBD-8BF4-A797DF294D1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroi.Views", "MostriVsEroi.Views\MostriVsEroi.Views.csproj", "{2D06AEB9-1FEF-4A30-8BD3-9E7B6BC2171C}"
@@ -25,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0CE8A0E6-E81C-4B38-82FB-497278A0E478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CE8A0E6-E81C-4B38-82FB-497278A0E478}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CE8A0E6-E81C-4B38-82FB-497278A0E478}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CE8A0E6-E81C-4B38-82FB-497278A0E478}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17BA761A-E0C3-4DBD-8BF4-A797DF294D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{17BA761A-E0C3-4DBD-8BF4-A797DF294D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17BA761A-E0C3-4DBD-8BF4-A797DF294D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU

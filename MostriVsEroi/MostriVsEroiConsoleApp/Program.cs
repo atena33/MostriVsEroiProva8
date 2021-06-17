@@ -1,6 +1,9 @@
 ﻿using MostriVsEroi;
+using MostriVsEroi.DbRepository;
+using MostriVsEroi.Modelli;
 using MostriVsEroi.Views;
 using System;
+using System.Collections.Generic;
 
 namespace MostriVsEroiConsoleApp
 {
@@ -8,7 +11,8 @@ namespace MostriVsEroiConsoleApp
     {
         static void Main(string[] args)
         {
-            Class1.AvviaProgramma();
+            Menu.MainMenu();
+
         }
     }
 }
