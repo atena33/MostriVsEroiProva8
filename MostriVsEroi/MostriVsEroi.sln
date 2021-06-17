@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostriVsEroi", "MostriVsEroi\MostriVsEroi.csproj", "{0CE8A0E6-E81C-4B38-82FB-497278A0E478}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroi", "MostriVsEroi\MostriVsEroi.csproj", "{0CE8A0E6-E81C-4B38-82FB-497278A0E478}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostriVsEroiConsoleApp", "MostriVsEroiConsoleApp\MostriVsEroiConsoleApp.csproj", "{17BA761A-E0C3-4DBD-8BF4-A797DF294D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroiConsoleApp", "MostriVsEroiConsoleApp\MostriVsEroiConsoleApp.csproj", "{17BA761A-E0C3-4DBD-8BF4-A797DF294D1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostriVsEroi.Views", "MostriVsEroi.Views\MostriVsEroi.Views.csproj", "{2D06AEB9-1FEF-4A30-8BD3-9E7B6BC2171C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroi.Views", "MostriVsEroi.Views\MostriVsEroi.Views.csproj", "{2D06AEB9-1FEF-4A30-8BD3-9E7B6BC2171C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostriVsEroi.Services", "MostriVsEroiServices\MostriVsEroi.Services.csproj", "{6A3BFB5E-99EE-4A47-BDFF-016F43D965C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroi.Services", "MostriVsEroiServices\MostriVsEroi.Services.csproj", "{6A3BFB5E-99EE-4A47-BDFF-016F43D965C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostriVsEroi.SchermataServices", "MostriVsEroiSchermataServices\MostriVsEroi.SchermataServices.csproj", "{7FC32677-224D-43CF-81D7-125DA8BD1CF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroi.SchermataServices", "MostriVsEroiSchermataServices\MostriVsEroi.SchermataServices.csproj", "{7FC32677-224D-43CF-81D7-125DA8BD1CF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostriVsEroi.Modelli", "MostriVsEroiModelli\MostriVsEroi.Modelli.csproj", "{E3E09BD6-2542-4593-B432-1CC05CB0CC74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroi.Modelli", "MostriVsEroiModelli\MostriVsEroi.Modelli.csproj", "{E3E09BD6-2542-4593-B432-1CC05CB0CC74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostriVsEroi.MockRepository", "MostriVsEroiMockRepository\MostriVsEroi.MockRepository.csproj", "{541A7124-36AC-408B-9DF0-4D6AE7E62B3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MostriVsEroi.MockRepository", "MostriVsEroiMockRepository\MostriVsEroi.MockRepository.csproj", "{541A7124-36AC-408B-9DF0-4D6AE7E62B3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostriVsEroi.DbRepository", "MostriVsEroi.DbRepository\MostriVsEroi.DbRepository.csproj", "{2A944CE0-7D19-4D86-A000-4ECABFC566A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{541A7124-36AC-408B-9DF0-4D6AE7E62B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{541A7124-36AC-408B-9DF0-4D6AE7E62B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{541A7124-36AC-408B-9DF0-4D6AE7E62B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A944CE0-7D19-4D86-A000-4ECABFC566A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A944CE0-7D19-4D86-A000-4ECABFC566A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A944CE0-7D19-4D86-A000-4ECABFC566A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A944CE0-7D19-4D86-A000-4ECABFC566A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

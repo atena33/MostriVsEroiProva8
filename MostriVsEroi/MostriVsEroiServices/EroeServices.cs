@@ -1,4 +1,5 @@
-﻿using MostriVsEroi.MockRepository;
+﻿using MostriVsEroi.DbRepository;
+using MostriVsEroi.MockRepository;
 using MostriVsEroi.Modelli;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace MostriVsEroi.Services
 
         public static List<Eroe> GetEroi(Utente utente)
         {
-            return EroeMockRepository.FetchEroi(utente);
+            return EroeDbRepository.FetchEroi(utente);
         }
 
         public static int CalcoloPunti(Mostro mostro)

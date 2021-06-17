@@ -26,6 +26,17 @@ namespace MostriVsEroi.Modelli
            
         }
 
+        public Eroe(int idEroe, string nomeEroe, CategoriaEroe categoriaEroe, Arma arma)
+        {
+            IdEroe = idEroe;
+            NomeEroe = nomeEroe;
+            CategoriaEroe = categoriaEroe;
+            Arma = arma;
+
+        }
+
+
+
         public int EroeAttacca(Eroe eroe)
         {
 

@@ -9,5 +9,10 @@ namespace MostriVsEroi.SchermataServices
         {
             return new Utente(username, password);
         }
+
+        public static Utente AddUtente(string username, string password)
+        {
+            return new Utente(username, password);
+        }
     }
 }

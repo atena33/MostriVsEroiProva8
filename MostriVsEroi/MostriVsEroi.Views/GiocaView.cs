@@ -100,7 +100,7 @@ namespace MostriVsEroi.View
         private static Mostro SceltaMostro(Eroe eroe)
         {
             var mostro = MostroServices.GetMostroRandom(eroe);
-            Console.WriteLine($"Il tuo mostro è {mostro.NomeMostro} di tipo {mostro.CategoriaMostro} con arma {mostro.Arma}");
+            Console.WriteLine($"Il tuo mostro è {mostro.NomeMostro} di tipo {mostro.CategoriaMostro} con arma {mostro.Arma.Nome}");
             return mostro;
         }
 
@@ -120,13 +120,13 @@ namespace MostriVsEroi.View
 
             
             Console.WriteLine($"Eroe scelto: {result.NomeEroe}");
-            return result;
             
             if (eroi.Count == 0)
             {
                 Console.WriteLine("Non hai ancora nessun eroe. Creane uno!");
             }
-            return new Eroe();
+            return result;
+
         }
     }
 }
