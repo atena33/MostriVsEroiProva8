@@ -81,5 +81,51 @@ namespace MostriVsEroi.Views
                 }
             } while (vuoiContinuare);
         }
+
+        internal static void MenuAdmin(Utente utente)
+        {
+            bool vuoiContinuare = true;
+
+            do
+            {
+                Console.WriteLine("Cosa vuoi fare?");
+
+                Console.WriteLine("Premi 1 per giocare");
+                Console.WriteLine("Premi 2 per creare un nuovo eroe");
+                Console.WriteLine("Premi 3 per eliminare un eroe");
+                Console.WriteLine("Premi 4 per creare un mostro");
+                Console.WriteLine("Premi 5 per vedere la classifica globale");
+                Console.WriteLine("Premi 0 per uscire");
+
+                string scelta = Console.ReadLine();
+
+                switch (scelta)
+                {
+                    case "1":
+
+                        GiocaView.Gioca(utente);
+                        break;
+                    case "2":
+                        CreaNuovoEroe.CreaEroe(utente);
+                        break;
+                    case "3":
+                        EliminaEroeView.EliminaEroe(utente);
+                        break;
+                    case "4":
+                        CreaNuovoMostroView.CreaMostro(utente);
+                        break;
+                    case "5":
+                        MostraClassificaGlobaleView.MostraClassifica();
+                        break;
+                    case "0":
+                        MainMenu();
+                        vuoiContinuare = false;
+                        break;
+                    default:
+                        Console.WriteLine("Scelta sbagliata.... Riprova");
+                        break;
+                }
+            } while (vuoiContinuare);
+        }
     }
 }

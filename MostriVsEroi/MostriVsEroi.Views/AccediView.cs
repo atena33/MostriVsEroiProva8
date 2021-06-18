@@ -17,7 +17,7 @@ namespace MostriVsEroi.View
             utente = UtenteServices.VerifyAuthentication(utente);
             if (utente.IsAuthenticated && utente.IsAdmin)
             {
-                //MenuAdmin
+                Menu.MenuAdmin(utente);
             }
             else if (utente.IsAuthenticated && !utente.IsAdmin)
             {

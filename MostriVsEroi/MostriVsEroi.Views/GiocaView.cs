@@ -34,33 +34,37 @@ namespace MostriVsEroi.View
             }
         }
 
-        private static int CalcoloPunteggioELivello(bool haVinto, Utente utente, Eroe eroe, Mostro mostro)
+        private static void CalcoloPunteggioELivello(bool haVinto, Utente utente, Eroe eroe, Mostro mostro)
         {
-            
-            
-            int punti =eroe.PuntiAccumulati;
-            int livello = eroe.Livello.NumeroLivello;
+
+            Eroe eroeInfo = EroeServices.GetEroeById(eroe);
+            int puntiAccumulati = eroeInfo.PuntiAccumulati;
+            int livello = eroeInfo.Livello.NumeroLivello;
+            int punti = EroeServices.CalcoloPunti(mostro);
             if (haVinto)
             {
-                 punti += EroeServices.CalcoloPunti(mostro);
-                int puntiAccumulati = eroe.PuntiAccumulati;
-                int newLivello = eroe.getLivello(punti).NumeroLivello;
+                puntiAccumulati = puntiAccumulati + punti;
+
+                EroeServices.UpdateEroe(eroeInfo, puntiAccumulati);
+
+                int newLivello = eroeInfo.getLivello(puntiAccumulati).NumeroLivello;
+                Console.WriteLine($"Hai fatto {punti} punti e hai accumulato {puntiAccumulati} punti. Il tuo livello è {livello}");
 
                 if (newLivello > livello)
                 {
-                    Console.WriteLine($"Complimenti, il tuo nuovo livello è {newLivello}");
-                    return punti = 0;
-                    
-                }
-                else
-                {
-                    puntiAccumulati += punti;
-                    Console.WriteLine($"Hai fatto {punti} punti e hai accumulato {puntiAccumulati} punti. Il tuo livello è {livello}");
+                    EroeServices.UpdateEroeLivello(eroeInfo, newLivello);
 
-                    return puntiAccumulati;
+                    Console.WriteLine($"Complimenti, il tuo nuovo livello è {newLivello}");
+
                 }
+
+                if (newLivello >= 3)
+                {
+                    UtenteServices.UtenteIsAdmin(utente);
+                }
+                
             }
-            return punti;
+            
         }
 
         private static bool Partita(Eroe eroe, Mostro mostro)

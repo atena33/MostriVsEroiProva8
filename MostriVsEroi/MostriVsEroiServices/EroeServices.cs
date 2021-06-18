@@ -23,5 +23,35 @@ namespace MostriVsEroi.Services
            var calcoloPunti= mostro.Livello.NumeroLivello * 10;
             return calcoloPunti;
         }
+
+        public static void AddEroe(Eroe eroe, Utente utente)
+        {
+             EroeDbRepository.AddEroe(eroe, utente);
+        }
+
+        public static void EliminaEroe(Eroe eroe)
+        {
+            EroeDbRepository.DeleteEroe(eroe);
+        }
+
+        public static void UpdateEroe(Eroe eroe, int punti)
+        {
+            EroeDbRepository.UpdateEroe(eroe, punti);
+        }
+
+        public static Eroe GetEroeById(Eroe eroe)
+        {
+            return EroeDbRepository.GetEroeById(eroe);
+        }
+
+        public static void UpdateEroeLivello(Eroe eroe, int newLivello)
+        {
+            EroeDbRepository.UpdateLivelloEroe(eroe, newLivello);
+        }
+
+        public static List<Eroe> ClassificaGlobale()
+        {
+            return EroeDbRepository.ClassificaGlobale();
+        }
     }
 }

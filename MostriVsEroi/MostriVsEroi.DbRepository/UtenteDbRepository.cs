@@ -37,9 +37,10 @@ namespace MostriVsEroi.DbRepository
                     int idUtente = (int)reader["IdUtente"];
                     string username1 = (string)reader["Username"];
                     string password1 = (string)reader["Password"];
+                    bool isAdmin = (bool)reader["IsAdmin"];
                     
 
-                     u = new Utente(idUtente, username1, password1, true);
+                     u = new Utente(idUtente, username1, password1, true, isAdmin);
                     
                 }
                 connection.Close();
@@ -95,6 +96,26 @@ namespace MostriVsEroi.DbRepository
                 command.Parameters.AddWithValue("@IsAuthenticated", true);
                 command.Parameters.AddWithValue("@IsAdmin", false);
 
+
+
+                command.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void UpdateIsAdminUtente(Utente utente)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                command.CommandType = System.Data.CommandType.Text;
+                command.CommandText = "update dbo.Utente set IsAdmin = @IsAdmin where IdUtente = @IdUtente";
+                command.Parameters.AddWithValue("@IsAdmin", true);
+                command.Parameters.AddWithValue("@IdUtente", utente.IdUtente);
 
 
                 command.ExecuteNonQuery();

@@ -27,5 +27,10 @@ namespace MostriVsEroi.Services
 
             return utente;
         }
+
+        public static void UtenteIsAdmin(Utente utente)
+        {
+            UtenteDbRepository.UpdateIsAdminUtente(utente);
+        }
     }
 }

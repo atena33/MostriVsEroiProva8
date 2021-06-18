@@ -24,12 +24,13 @@ namespace MostriVsEroi.Modelli
             IsAuthenticated = false;
             IsAdmin = false;
         }
-        public Utente(int idUtente, string username, string password, bool isAuthenticated)
+        public Utente(int idUtente, string username, string password, bool isAuthenticated, bool isAdmin)
         {
             IdUtente = idUtente;
             Username = username;
             Password = password;
             IsAuthenticated = isAuthenticated;
+            IsAdmin = isAdmin;
         }
 
         public Utente(int idUtente, string username, string password)
@@ -39,6 +40,12 @@ namespace MostriVsEroi.Modelli
             Password = password;
             IsAuthenticated = false;
             IsAdmin = false;
+        }
+
+        public Utente(int idUtente)
+        {
+            IdUtente = idUtente;
+
         }
     }
 }

@@ -15,6 +15,7 @@ namespace MostriVsEroi.Modelli
         public Arma Arma { get; set; }
         public Livello Livello { get; set; } = new Livello(1);
         public int PuntiAccumulati { get; set; }
+        public Utente Utente { get; set; }
 
 
         public Eroe(string nomeEroe, string categoriaEroe, Arma arma)
@@ -35,6 +36,32 @@ namespace MostriVsEroi.Modelli
 
         }
 
+        public Eroe(string nomeEroe, string categoriaEroe, Arma arma, Utente utente)
+        {
+            NomeEroe = nomeEroe;
+            CategoriaEroe = categoriaEroe;
+            Arma = arma;
+            Utente = utente;
+
+        }
+
+        public Eroe(int idEroe, string nomeEroe, string categoriaEroe, int puntiAccumulati,  Livello idLivello)
+        {
+            IdEroe = idEroe;
+            NomeEroe = nomeEroe;
+            CategoriaEroe = categoriaEroe;
+            PuntiAccumulati = puntiAccumulati;
+            Livello = idLivello;
+        }
+
+        public Eroe(string nomeEroe, string categoriaEroe, int puntiAccumulati, Livello idLivello)
+        {
+            
+            NomeEroe = nomeEroe;
+            CategoriaEroe = categoriaEroe;
+            PuntiAccumulati = puntiAccumulati;
+            Livello = idLivello;
+        }
 
 
         public int EroeAttacca(Eroe eroe)
